@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -17,7 +17,12 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        searchTextField.delegate = self
+        //text field handle the task of our user entering text
+        //self refers to current view controller (WeatherViewController)
+        // textField says oyyy view controoler the user just start typing, stop typing ...
+        
     }
 
     @IBAction func searchPressed(_ sender: UIButton) {
