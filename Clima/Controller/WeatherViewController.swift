@@ -22,6 +22,8 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationManager.requestAlwaysAuthorization() //ask user for permisision
+        
         weatherManager.delegate = self 
         searchTextField.delegate = self
         //text field handle the task of our user entering text
