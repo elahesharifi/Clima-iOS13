@@ -33,6 +33,10 @@ class WeatherViewController: UIViewController {
         //self refers to current view controller (WeatherViewController)
         // textField says oyyy view controoler the user just start typing, stop typing ...
         
+        locationManager.requestLocation()
+       
+    }
+    @IBAction func currentLocationButton(_ sender: UIButton) {
         // Request a user’s location once
         locationManager.requestLocation()
     }
@@ -93,6 +97,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if let location = locations.last {
+            locationManager.stopUpdatingLocation()
             let lat = location.coordinate.latitude
             let lon = location.coordinate.longitude
             // Handle location update
