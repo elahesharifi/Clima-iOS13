@@ -50,7 +50,7 @@ struct WeatherManager {
             let name = decodedData.name
             
             let weather = WeatherModel(conditionId: id, ciyName: name, temperature: temp)
-            print(weather.conditionName)
+            print(weather.temperatureString)
         }catch{
             print(error)
         }
